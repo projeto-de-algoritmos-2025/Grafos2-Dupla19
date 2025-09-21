@@ -44,7 +44,7 @@ class Solution
 public:
     long long minimumWeight(int n, vector<vector<int>> &edges, int src1, int src2, int dest)
     {
-        // Constrói os grafos: original e reverso
+        // constroi grafo e grafo reverso
         vector<vector<pair<int, int>>> adj(n), rev_adj(n);
         for (const auto &edge : edges)
         {
@@ -55,8 +55,10 @@ public:
             rev_adj[v].push_back({u, w}); // Aresta reversa
         }
 
-        // Vamos parar por aqui. A próxima etapa será rodar Dijkstra.
-        // A lógica de execução e a iteração final serão nos próximos commits.
-        return 0; // Valor temporário
+        vector<long long> dist1 = dijkstra(n, adj, src1);
+        vector<long long> dist2 = dijkstra(n, adj, src2);
+        vector<long long> dist_rev = dijkstra(n, rev_adj, dest);
+
+        return 0;
     }
 };
