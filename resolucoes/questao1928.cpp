@@ -24,9 +24,9 @@ public:
     vector<vector<int>> minTime(n, vector<int>(maxTime + 1, INT_MAX));
             
     pq.push({0, 0, passingFees[0]});
-            minTime[0][0] = passingFees[0];
+    minTime[0][0] = passingFees[0];
             
-            while (!pq.empty()) {
+    while (!pq.empty()) {
                 auto cur = pq.top(); pq.pop();
                 int u = cur.city, t = cur.time, c = cur.cost;
                 
@@ -41,6 +41,7 @@ public:
                         pq.push({v, newTime, newCost});
                     }
                 }
-            }
+        }
+        
     }
 };
