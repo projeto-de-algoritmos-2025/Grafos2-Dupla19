@@ -24,4 +24,4 @@ Serão realizados 3 exercícios, sendo 2 de nível Difícil e um de nível médi
 |[743. Network Delay Time](https://leetcode.com/problems/network-delay-time/description)| Médio | [Resolução](/resolucoes/questao743.cpp) |
 
 ## Vídeo 
-[Explicação da resolução das questões](https://github.com/projeto-de-algoritmos-2025/Grafos2-Dupla19)
+[Explicação da resolução das questões](https://www.youtube.com/watch?v=_U5063CQbcM)
