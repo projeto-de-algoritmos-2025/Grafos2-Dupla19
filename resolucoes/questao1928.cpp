@@ -19,5 +19,28 @@ public:
                 return cost > other.cost;
             }
         }
- }
+
+    priority_queue<State, vector<State>, greater<State>> pq;
+    vector<vector<int>> minTime(n, vector<int>(maxTime + 1, INT_MAX));
+            
+    pq.push({0, 0, passingFees[0]});
+            minTime[0][0] = passingFees[0];
+            
+            while (!pq.empty()) {
+                auto cur = pq.top(); pq.pop();
+                int u = cur.city, t = cur.time, c = cur.cost;
+                
+                if (u == n - 1) return c; // Chegou no destino
+                
+                for (auto &[v, timeNeeded] : graph[u]) {
+                    int newTime = t + timeNeeded;
+                    int newCost = c + passingFees[v];
+                    
+                    if (newTime <= maxTime && newCost < minTime[v][newTime]) {
+                        minTime[v][newTime] = newCost;
+                        pq.push({v, newTime, newCost});
+                    }
+                }
+            }
+    }
 };
