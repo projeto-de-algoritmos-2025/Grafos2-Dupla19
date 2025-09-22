@@ -1,7 +1,8 @@
 #include <vector>
-#include <unordered_map>
 #include <queue>
 #include <limits>
+#include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 
@@ -61,15 +62,28 @@ public:
             adj[u].push_back({v, w});
         }
 
-        // armazena o tempo minimo para cada no
-        vector<int> dist(n + 1, numeric_limits<int>::max());
-        dist[k] = 0;
-
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-        pq.push({0, k});
-
+        // chama dijkstra e guarda as distâncias
         vector<long long> dist = dijkstra(n, adj, k);
 
-        return 0;
+        //encontra o menor tempo de chegada, excluindo o nó de partida
+        long long min_time = INF;
+        for (int i = 1; i <= n; ++i)
+        {
+            if (dist[i] == INF)
+            {
+                return -1; //se inalcançável
+            }
+            if (i != k)
+            {
+                min_time = min(min_time, dist[i]);
+            }
+        }
+
+        if (n == 1)
+        {
+            return 0;
+        }
+
+        return static_cast<int>(min_time);
     }
 };
