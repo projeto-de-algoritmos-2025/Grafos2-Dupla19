@@ -1,7 +1,7 @@
 class Solution { 
 public: 
  int minCost(int maxTime, vector<vector<int>>& edges, vector<int>& passingFees) {
-        int n = passingFees.size();
+    int n = passingFees.size();
         // Construir o grafo: city -> list of (neighbor, time)
         vector<vector<pair<int,int>>> graph(n);
         for (auto &e : edges) {
@@ -18,7 +18,7 @@ public:
             bool operator>(const State &other) const {
                 return cost > other.cost;
             }
-        }
+        };
 
     priority_queue<State, vector<State>, greater<State>> pq;
     vector<vector<int>> minTime(n, vector<int>(maxTime + 1, INT_MAX));
@@ -42,6 +42,6 @@ public:
                     }
                 }
         }
-        
+        return -1;
     }
 };
