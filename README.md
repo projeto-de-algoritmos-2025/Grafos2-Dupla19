@@ -19,7 +19,7 @@ Serão realizados 3 exercícios, sendo 2 de nível Difícil e um de nível médi
 
 |Nome | Dificuldade | Link Resolução |
 | -- | -- | -- |
-|[1928. Minimum Cost to Reach Destination in Time](https://leetcode.com/problems/minimum-cost-to-reach-destination-in-time/description) | Difícil | [Resolução](https://github.com/projeto-de-algoritmos-2025/Grafos2-Dupla19) |
+|[1928. Minimum Cost to Reach Destination in Time](https://leetcode.com/problems/minimum-cost-to-reach-destination-in-time/description) | Difícil | [Resolução](/resolucoes/questao1928.cpp) |
 |[2203. Minimum Weighted Subgraph With the Required Paths](https://leetcode.com/problems/minimum-weighted-subgraph-with-the-required-paths/description) | Difícil | [Resolução](https://github.com/projeto-de-algoritmos-2025/Grafos2-Dupla19) |
 |[743. Network Delay Time](https://leetcode.com/problems/network-delay-time/description)| Médio | [Resolução](https://github.com/projeto-de-algoritmos-2025/Grafos2-Dupla19) |
 
