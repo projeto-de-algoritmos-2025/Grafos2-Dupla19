@@ -62,28 +62,20 @@ public:
             adj[u].push_back({v, w});
         }
 
-        // chama dijkstra e guarda as distâncias
+        //chama dijkstra e guarda as distâncias
         vector<long long> dist = dijkstra(n, adj, k);
 
-        //encontra o menor tempo de chegada, excluindo o nó de partida
-        long long min_time = INF;
+        //encontra o maior tempo de chegada
+        long long max_time = 0;
         for (int i = 1; i <= n; ++i)
         {
             if (dist[i] == INF)
             {
-                return -1; //se inalcançável
+                return -1;
             }
-            if (i != k)
-            {
-                min_time = min(min_time, dist[i]);
-            }
+            max_time = max(max_time, dist[i]);
         }
 
-        if (n == 1)
-        {
-            return 0;
-        }
-
-        return static_cast<int>(min_time);
+        return static_cast<int>(max_time);
     }
 };
